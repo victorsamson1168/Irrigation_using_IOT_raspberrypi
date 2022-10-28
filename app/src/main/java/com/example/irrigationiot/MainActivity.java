@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
         Button off=(Button) findViewById(R.id.off);
         Button on=(Button) findViewById(R.id.on);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("nodes");
+        final DatabaseReference dbRef = database.getReference("nodes");
 
 
         off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.setValue("OFF");
+                dbRef.setValue("OFF");
 
 
             }
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         on.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.setValue("ON");
+                dbRef.setValue("ON");
 
 
             }
